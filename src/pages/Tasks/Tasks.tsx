@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import TaskCard from "../../components/TaskCard";
 import { useState } from "react";
+import BoxTarget from "../../components/BoxTarget";
 
 const Tasks = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -83,6 +84,7 @@ const Tasks = () => {
               </Text>
               <Divider />
             </Box>
+            <BoxTarget />
           </Stack>
           {taskList
             .filter((task) => task.status === "done")
