@@ -8,6 +8,7 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
+import TaskCard from "../../components/TaskCard";
 
 const Tasks = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -34,6 +35,7 @@ const Tasks = () => {
               <Divider />
             </Box>
           </Stack>
+          <TaskCard />
         </Box>
         <Box bg={doneBG[colorMode]} rounded={"md"} p={3} boxShadow={"md"}>
           <Stack spacing={3}>
