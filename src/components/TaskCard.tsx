@@ -1,13 +1,19 @@
 import { Box, Flex, Badge, Text } from "@chakra-ui/react";
 
-const TaskCard = () => {
+type TaskCardProps = {
+  title: string;
+  category: string;
+  description: string;
+};
+
+const TaskCard = ({ title, category, description }: TaskCardProps) => {
   return (
     <Box bg='orange.300' p={3} boxShadow={"sm"} mt='3'>
       <Flex direction='row' justify={"space-between"} mb={3}>
-        <Text>Buy Tablet</Text>
-        <Badge colorScheme='cyan'>Chore</Badge>
+        <Text>{title}</Text>
+        <Badge colorScheme='cyan'>{category}</Badge>
       </Flex>
-      <Text>Get a new tablet because you broke the one you had.</Text>
+      <Text>{description}</Text>
     </Box>
   );
 };

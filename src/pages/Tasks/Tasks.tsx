@@ -10,6 +10,26 @@ import {
 } from "@chakra-ui/react";
 import TaskCard from "../../components/TaskCard";
 
+const TaskCards = [
+  {
+    title: "Task 1",
+    category: "Category 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    title: "Task 2",
+    category: "Category 2",
+    description:
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "Task 3",
+    category: "Category 3",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+];
+
 const Tasks = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const wipBG = { light: "teal.300", dark: "teal.600" };
@@ -35,7 +55,15 @@ const Tasks = () => {
               <Divider />
             </Box>
           </Stack>
-          <TaskCard />
+          {TaskCards.map((card, i) => (
+            <div key={i}>
+              <TaskCard
+                title={card.title}
+                category={card.category}
+                description={card.description}
+              />
+            </div>
+          ))}
         </Box>
         <Box bg={doneBG[colorMode]} rounded={"md"} p={3} boxShadow={"md"}>
           <Stack spacing={3}>
