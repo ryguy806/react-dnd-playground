@@ -6,11 +6,13 @@ type TaskCardProps = {
   title: string;
   category: string;
   description: string;
+  id: string;
 };
 
-const TaskCard = ({ title, category, description }: TaskCardProps) => {
+const TaskCard = ({ title, category, description, id }: TaskCardProps) => {
   const [{ isDragging }, drag] = useDrag({
     type: ItemTypes.CARD,
+    item: { id },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging,
     }),
